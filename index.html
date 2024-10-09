@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exploring German Culture: My Internship Journey</title>    
+    <meta name="description" content="A gallery showcasing the rich culture of Germany and my experiences during my internship.">
+    <meta name="keywords" content="Germany, culture, internship, travel, photography, German traditions, art, history, experiences">
+    <meta name="author" content="Kacper Oleksy">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <meta property="og:title" content="Exploring German Culture: My Internship Journey">
+    <meta property="og:description" content="A gallery showcasing the rich culture of Germany and my experiences during my internship.">
+
+    <link rel="stylesheet" href="stylesheet.css"> 
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Exploring German Culture: My Internship Journey</h1>
+    </header>
+    
+    <nav class="navbar">
+        <button id="home">Home</button>
+        <div class="dropdown-button" id="practice-button">
+            <div class="button">Practice</div>
+            <div class="dropdown-menu">
+                <span class="week" data-week="week_one">Week One</span>
+                <span class="week" data-week="week_two">Week Two</span>
+                <span id="smart-home-button" class="smart-home-button">Smart Home</span>
+            </div>
+        </div>
+        <div class="dropdown-button" id="culture-button">
+            <div class="button">Culture</div>
+            <div class="dropdown-menu">
+                <span class="city" data-city="berlin">Berlin</span>
+                <span class="city" data-city="leipzig">Leipzig</span>
+            </div>
+        </div>
+        <button id="freetime-button">Free Time</button>
+        <a href="https://github.com/SxtTxch" target="_blank" class="github-button" aria-label="GitHub">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="width: 42px; height: 42px;">
+        </a>
+    </nav>
+    
+    <div class="content-wrapper"> <!-- New wrapper for content and footer -->
+        <main>
+            <section>
+                <div id="arrow_wrapper">
+                    <div id="content" class="image-container">
+                        <div class="responsive-arrows-wrapper">
+                            <button id="old-arrow" class="arrow-button left-arrow" data-direction="previous" aria-label="Previous image">&lt;</button>
+                        </div>
+                            <figure>
+                                <img id="gallery-image" class="scaled-image" src="./media/loading.gif" alt="Gallery Image" />
+                                <figcaption id="image_desc">Description</figcaption>
+                            </figure>
+                        <div class="responsive-arrows-wrapper">
+                            <button class="arrow-button left-arrow" id="responsive-arrow" data-direction="previous" aria-label="Previous image">&lt;</button>
+                            <button id="right-arrow" class="arrow-button" data-direction="next" aria-label="Next image">&gt;</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="image-gallery">
+            <div class="thumbnail-gallery">
+            </div>
+        </div>
+        
+        <!-- Add Video Container -->
+        <div id="video-container" style="display: none;">
+            <video id="smart-home-video" width="600" controls>
+                <source src="./media/galleries/practice/week_two/smarthome.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Kacper Oleksy. All rights reserved.</p>
+        </footer>
+    </div>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close" aria-label="Close Lightbox">&times;</span>
+        <img id="lightboxImage" class="lightbox-content" src="" alt="">
+    </div>
+
+<div class="tos-popup" id="tos-popup">
+    <div class="tos-content">
+        <span class="close-tos" id="close-tos">&times;</span>
+        <h2>Terms of Service</h2>
+        <p>Welcome to the "Exploring German Culture: My Internship Journey" website. By accessing this site, you agree to the following terms and conditions:</p>
+        <ol>
+            <li style="background-color: #2a2a2a; padding: 10px; border-left: 5px solid #f39c12; color: #ffffff;">
+                <strong>Internship Performance:</strong> If your name's Martin, you are required to provide me with the best grade possible for my internship experience. This is essential to ensure that I can effectively showcase the knowledge and skills I have gained during this period.
+            </li>
+            <li>
+                <strong>Content Usage:</strong> The images, videos, and other content displayed on this site are for educational and informational purposes. You may not reproduce, distribute, or use any content without prior permission.
+            </li>
+            <li>
+                <strong>User Responsibilities:</strong> Users are expected to interact respectfully with the content and refrain from posting any offensive or inappropriate remarks.
+            </li>
+            <li>
+                <strong>Disclaimer:</strong> The content on this website is provided "as is." I make no warranties regarding the accuracy or completeness of the information presented.
+            </li>
+            <li>
+                <strong>Contact Information:</strong> For any questions regarding these terms or to discuss your grading, please contact me at the provided email address on the website.
+            </li>
+        </ol>
+        <p>By using this website, you acknowledge that you have read, understood, and agreed to these terms.</p>
+        <p>If you have any questions regarding these terms, please contact us.</p>
+        <button id="accept-tos" class="button">Accept</button>
+        <button id="decline-tos" class="button">Decline</button>
+    </div>
+</div>
+
+
+</div>
+</div>
+</body>
+</html>

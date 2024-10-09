@@ -1,0 +1,496 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f8fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #24292e;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.navbar button, .button {
+    user-select: none;
+    background-color: transparent;
+    color: #24292e;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.navbar button:hover, .button:hover {
+    color: #0366d6;
+}
+
+.dropdown-button {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    width: 150px;
+    animation: dropdown-slide 0.2s ease-out forwards;
+}
+
+@keyframes dropdown-slide {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropdown-slide-close {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.dropdown-button:hover .dropdown-menu,
+.dropdown-button:focus-within .dropdown-menu {
+    display: block;
+    animation: dropdown-slide 0.2s ease-out forwards;
+}
+
+.dropdown-button:not(:hover) .dropdown-menu,
+.dropdown-button:focus-within .dropdown-menu:not(:focus) {
+    animation: dropdown-slide-close 0.2s ease-out forwards;
+}
+.dropdown-menu span {
+    display: block;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu span:hover {
+    background-color: #f1f1f1;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+.image-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#arrow_wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.scaled-image {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin: 0 10px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 54, 106, 0.4);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.scaled-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 54, 106, 0.6);
+}
+
+.arrow-button {
+    user-select: none;
+    background-color: #2f363d;
+    color: #ffffff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 1rem;
+    margin: 0 15px;
+    border-radius: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    opacity: 0.85;
+    flex-shrink: 0;
+}
+
+.arrow-button:hover {
+    background-color: #0366d6;
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.arrow-button:active {
+    background-color: #005bb5;
+    transform: scale(0.8);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.responsive-arrows-wrapper {
+    display:  flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+#responsive-arrow {
+    display: none;
+}
+
+figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.github-button {
+    display: flex;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.github-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.github-button:hover {
+    transform: scale(1.1);
+}
+
+
+#video-container {
+    display: flex; /* Use flexbox to center the video */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 20px 0; /* Add some margin around the video */
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+#smart-home-video {
+    width: 100%; /* Make the video responsive */
+    max-width: 400px; /* Limit maximum width */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.video-container p {
+    color: #ffffff; /* White text for any captions */
+    text-align: center; /* Center text */
+    margin-top: 10px; /* Add some margin above */
+}
+
+
+
+#image_desc {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1rem;
+    max-width: 400px;
+    word-wrap: break-word;
+    padding: 10px 15px;
+    flex: 1;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thumbnail-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allow thumbnails to wrap to the next line */
+    justify-content: center; /* Center the thumbnails */
+    gap: 10px; /* Space between thumbnails */
+    padding: 10px; /* Padding around the gallery */
+}
+
+/* Set a fixed width for thumbnails and maintain aspect ratio */
+.thumbnail {
+    border: 1px solid #ffffff;
+    width: 100%;
+    max-width: 100px;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px; /* Rounded corners */
+    border: 
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+
+/* Active thumbnail styling */
+.active-thumbnail {
+    transform: scale(1.2); /* Slightly scale the active thumbnail */
+}
+
+.thumbnail:hover {
+    border: 2px solid #0366d6; /* Highlight on hover */
+}
+
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-content {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.tos-popup {
+    display: block; /* Set to block to show the popup */
+    position: fixed; /* Fixed positioning for full screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    z-index: 1000; /* On top of everything */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.tos-content {
+    background-color: #ffffff; /* Darker box for the popup */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the box */
+    width: 90%;
+    max-width: 600px; /* Max width for larger screens */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0); /* Subtle shadow */
+    overflow-y: auto; /* Enable scrolling if content is too long */
+    max-height: 80vh; /* Limit height to keep the content accessible */
+    z-index: 1010; /* Ensure it’s above the background */
+    position: relative; /* Ensure the content is positioned relative to the popup */
+}
+
+#accept-tos {
+    padding: 10px 20px; /* Adjusts top/bottom and left/right padding */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Adjust font size */
+    transition: 0.5s; /* Smooth background color change */
+}
+
+#accept-tos:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05);
+}
+
+#decline-tos:hover {
+    color: #ff0000
+}
+
+.caption {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.5s ease, transform 0.5s ease; /* Specify both properties with duration */
+    transform: rotateZ(0deg); /* Initial transform state */
+}
+
+.close-tos {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #000000;
+    cursor: pointer;
+    transition: color 0.5s ease, transform 0.5s ease; /* Specify both properties with duration */
+    transform: rotateZ(0deg); /* Initial transform state */
+}
+
+.close:hover, .close-tos:hover {
+    color: #FF0000;
+    transform: rotateZ(90deg); /* Scale up on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #24292e;
+    color: #ffffff;
+}
+
+footer p {
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+
+
+    #old-arrow {
+        display: none;
+    }
+
+    #responsive-arrow {
+        display: block;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar button, .button {
+        margin: 5px 0;
+        padding: 10px;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .thumbnail {
+        width: 75px; /* Adjust size for medium screens */
+    }
+
+    #arrow_wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .arrow-button {
+        margin-top: 10px;
+    }
+
+    .image-container {
+        flex-direction: column;
+    }
+
+    .scaled-image {
+        margin-bottom: 10px;
+    }
+
+    #image_desc {
+        font-size: 14px;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .dropdown-menu span {
+        padding: 15px 20px;
+        font-size: 16px;
+        border-bottom: 3px solid #ddd;
+    }
+
+    .dropdown-button:hover .dropdown-menu,
+    .dropdown-button:focus-within .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu span:hover {
+        background-color: #e1e4e8;
+    }
+}
+@media (max-width: 480px) {
+    .thumbnail {
+        width: 50px; /* Adjust size for small screens */
+    }
+}
+
+.fade {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#gallery-image {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out;
+}
