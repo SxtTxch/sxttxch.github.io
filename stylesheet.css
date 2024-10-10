@@ -51,6 +51,7 @@ header {
     color: #0366d6;
 }
 
+
 .dropdown-button {
     position: relative;
 }
@@ -58,6 +59,7 @@ header {
 .dropdown-menu {
     display: none;
     position: absolute;
+    overflow: hidden;
     top: 100%;
     left: 0;
     background-color: #ffffff;
@@ -91,7 +93,10 @@ header {
 
 .dropdown-button:hover .dropdown-menu,
 .dropdown-button:focus-within .dropdown-menu {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     animation: dropdown-slide 0.2s ease-out forwards;
 }
 
@@ -100,8 +105,12 @@ header {
     animation: dropdown-slide-close 0.2s ease-out forwards;
 }
 .dropdown-menu span {
-    display: block;
+    width: 100%;
+    display: flex;
     padding: 10px 20px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -222,7 +231,6 @@ img {
     margin: 20px 0; /* Add some margin around the video */
     padding: 20px; /* Add padding for better spacing */
     border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
 }
 
 #smart-home-video {
@@ -230,6 +238,7 @@ img {
     max-width: 400px; /* Limit maximum width */
     border-radius: 5px; /* Rounded corners */
 }
+
 
 .video-container p {
     color: #ffffff; /* White text for any captions */
@@ -260,36 +269,37 @@ img {
 }
 
 .thumbnail-gallery {
+    margin: auto;
     display: flex;
     flex-wrap: wrap; /* Allow thumbnails to wrap to the next line */
     justify-content: center; /* Center the thumbnails */
+    align-items: center;
     gap: 10px; /* Space between thumbnails */
     padding: 10px; /* Padding around the gallery */
 }
 
 /* Set a fixed width for thumbnails and maintain aspect ratio */
 .thumbnail {
-    border: 1px solid #ffffff;
+    border: 1px solid #ffffff; /* Border color */
     width: 100%;
     max-width: 100px;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 3; /* Aspect ratio */
     height: auto;
-    object-fit: cover;
+    object-fit: cover; /* Maintain aspect ratio and fill the element */
     border-radius: 5px; /* Rounded corners */
-    border: 
-    cursor: pointer;
+    cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.3s ease; /* Smooth scaling transition */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 0px 5px;
 }
-
 
 /* Active thumbnail styling */
 .active-thumbnail {
-    transform: scale(1.2); /* Slightly scale the active thumbnail */
+    transform: scale(1.1);
 }
 
 .thumbnail:hover {
-    border: 2px solid #0366d6; /* Highlight on hover */
+    border: 1px solid #0366d6; /* Use a slightly darker white for the hover effect */
 }
 
 .lightbox {
@@ -389,6 +399,21 @@ img {
 .close:hover, .close-tos:hover {
     color: #FF0000;
     transform: rotateZ(90deg); /* Scale up on hover */
+}
+
+.tos-animation {
+    animation: fadeOutscale 0.5s ease-in-out; /* Apply fade and scale animation */
+}
+
+@keyframes fadeOutscale {
+    0% {
+        opacity: 0;
+        transform: scale(1); /* Start slightly smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(0); /* End at normal size */
+    }
 }
 
 footer {

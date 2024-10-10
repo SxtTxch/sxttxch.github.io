@@ -314,6 +314,8 @@ function initializeButtons() {
         document.getElementById('tos-popup').style.display = 'none'; // Hide TOS popup
     });
 
+    
+
 }
 
 function openLightbox(src, alt) {
