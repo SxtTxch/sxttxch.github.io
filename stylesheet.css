@@ -158,7 +158,6 @@ main {
 .arrow-button {
     user-select: none;
     background-color: #2f363d;
-    position: absolute;
     color: #ffffff;
     border: none;
     font-size: 1rem;
@@ -439,6 +438,14 @@ footer p {
         display: block;
     }
 
+    .responsive-arrows-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+        height: fit-content;
+    }
+
     .navbar {
         flex-direction: column;
     }
@@ -455,7 +462,7 @@ footer p {
     }
 
     #arrow_wrapper {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
 
