@@ -233,9 +233,9 @@ img {
     border-radius: 5px; /* Rounded corners */
 }
 
-#smart-home-video {
+#video {
     width: 100%; /* Make the video responsive */
-    max-width: 400px; /* Limit maximum width */
+    max-width: 1080px; /* Limit maximum width */
     border-radius: 5px; /* Rounded corners */
 }
 
@@ -556,7 +556,6 @@ header.dark-mode {
 
 .navbar.dark-mode {
     background-color: #161b22; /* Dark background */
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0); /* Remove shadow in dark mode */
 }
 
 .navbar.dark-mode button, .navbar.dark-mode .button {

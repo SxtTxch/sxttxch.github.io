@@ -277,6 +277,8 @@ function handleButtonClick(event) {
 
 function initializeButtons() {
     var smartHomeButton = document.getElementById("smart-home-button");
+    var source = document.getElementById("source");
+    var overallButton = document.getElementById('overall-video-button');
     var galleryContainer = document.querySelector(".image-container");
     var thumbnail_gallery = document.getElementsByClassName("thumbnail-gallery")[0]
     var galleryImage = document.getElementById("gallery-image");
@@ -300,7 +302,16 @@ function initializeButtons() {
         galleryContainer.style.display = "none"; // Hide the gallery
         thumbnail_gallery.style.display = "none";
         videoContainer.style.display = "flex"; // Show the video
-        document.getElementById("smart-home-video").play(); // Play the video
+        source.src = "./media/galleries/practice/week_two/smarthome.mp4"
+        document.getElementById("video").play(); // Play the video
+    });
+
+    overallButton.addEventListener("click", function() {
+        galleryContainer.style.display = "none"; // Hide the gallery
+        thumbnail_gallery.style.display = "none";
+        videoContainer.style.display = "flex"; // Show the video
+        source.src = "./media/galleries/practice/week_two/overall.mp4"
+        document.getElementById("video").play(); // Play the video
     });
 
 
