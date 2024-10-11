@@ -527,3 +527,73 @@ footer p {
     height: auto;
     transition: opacity 0.5s ease-in-out;
 }
+
+.moon-icon,
+.sun-icon {
+    transition: opacity 0.3s ease;
+    position: absolute;
+}
+
+.sun-icon {
+    opacity: 0;
+}
+
+body, header, .navbar, .dropdown-menu, .arrow-button, footer, #image_desc {
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Adjust duration and easing function as needed */
+}
+
+#dark-mode-toggle {
+    position: relative; /* Allow absolute positioning of icons */
+}
+
+body.dark-mode {
+    background-color: #0d1117; /* Dark background */
+}
+
+header.dark-mode {
+    background-color: #161b22; /* Slightly lighter than the body */
+}
+
+.navbar.dark-mode {
+    background-color: #161b22; /* Dark background */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0); /* Remove shadow in dark mode */
+}
+
+.navbar.dark-mode button, .navbar.dark-mode .button {
+    color: white; /* Light button text */
+    background-color: transparent; /* Make buttons transparent */
+}
+
+.navbar button.dark-mode:hover, .button.dark-mode:hover {
+    color: #58a6ff; /* Hover text color */
+    background-color: rgba(88, 166, 255, 0.1); /* Light hover background */
+}
+
+.dropdown-menu.dark-mode {
+    background-color: #21262d; /* Dropdown background */
+}
+
+.dropdown-menu span.dark-mode:hover {
+    background-color: #30363d; /* Hover effect for dropdown items */
+}
+
+.arrow-button.dark-mode {
+    background-color: #21262d; /* Arrow button background */
+    color: #c9d1d9; /* Arrow button text */
+}
+
+.arrow-button.dark-mode:hover {
+    background-color: #58a6ff; /* Hover effect for arrow button */
+}
+
+footer.dark-mode {
+    background-color: #161b22; /* Footer background */
+    color: #c9d1d9; /* Footer text */
+}
+
+#image_desc.dark-mode {
+    background-color: #1f2328; /* Light shade for description */
+    color: #c9d1d9; /* Text color */
+}
+
+

@@ -320,7 +320,22 @@ function initializeButtons() {
         document.getElementById('tos-popup').style.display = 'none'; // Hide TOS popup
     });
 
-    
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        const imageDesc = document.getElementById('image_desc');
+        const navbar = document.getElementsByClassName("navbar")[0];
+        navbar.classList.add('dark-mode');
+        imageDesc.classList.add('dark-mode');
+    }
+
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const moonIcon = darkModeToggle.querySelector(".moon-icon");
+    const sunIcon = darkModeToggle.querySelector(".sun-icon");
+
+    darkModeToggle.addEventListener("click", () => {
+        toggleDarkMode()
+    });
 
 }
 
@@ -337,6 +352,28 @@ function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
     lightbox.style.display = 'none'; // Hide the lightbox
 }
+
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    const imageDesc = document.getElementById('image_desc');
+    const navbar = document.getElementsByClassName('navbar')[0];
+    if (imageDesc) {
+        imageDesc.classList.toggle('dark-mode');
+    }
+
+    if (navbar) {
+        navbar.classList.toggle('dark-mode');
+    }
+
+    // Save the user's preference to localStorage
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+}
+
 
 window.onload = function() {
     initializeButtons();
