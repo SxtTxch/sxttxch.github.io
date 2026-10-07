@@ -1,0 +1,26 @@
+.icon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0.4rem;
+	width: fit-content;
+}
+.icon > img {
+	width: 64px;
+	height: 64px;
+}
+
+.selected,
+.selected_explorer {
+  background: rgba(46, 139, 87, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  border-radius: var(--radius, 0.3rem);
+}
+
+.selected_explorer {
+  --radius: 0;
+}
+

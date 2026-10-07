@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
+
+body, html {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	cursor: url("./assets/angry-ghost.svg"), auto;
+}
+
+#App {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.desktop_transition {
+    transition: 0.5s ease;
+}
+.desktop_background {
+    background-color: #171717;
+}
+.pointer:hover, :where(a, button){
+	cursor: url("./assets/funny-ghost.svg"), auto;
+
+}
+body {
+  background: radial-gradient(circle at center, #0f172a 0%, #080c10 100%);
+}
+body::after {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  z-index: 1; 
+  white-space: pre; 
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: clamp(0.8rem, 1.5vh, 1.5rem);
+  filter: blur(0.2rem);
+  color: rgba(0, 229, 255, 0.15);
+  pointer-events: none;
+  z-index: 0;
+
+  content: var(--after-content, "#![no_std]\A #![feature(allocator_api, stdsimd)]\A\A use core::sync::atomic::{AtomicUsize, Ordering::SeqCst};\A use core::arch::x86_64::{_mm256_fmadd_ps, _mm256_loadu_ps, _mm256_storeu_ps};\A\A #[repr(C, align(64))]\A pub struct DmaBufferRing<const N: usize> {\A    head: AtomicUsize,\A    tail: AtomicUsize,\A    descriptors: [*mut u8; N],\A }\A\A #[inline(always)]\A pub unsafe fn execute_kernel_pipeline(\A    reg_base: *mut usize,\A    src: &[f32; 8],\A    dest: &mut [f32; 8]\A ) -> Result<(), &'static str> {\A    let status_reg = reg_base.add(0x4002_1000 >> 3);\A    if status_reg.read_volatile() & 0x8000_0000 == 0 {\A        return Err(\"ERR_SYS_BUS_BUSY\");\A    }\A\A    let v_src = _mm256_loadu_ps(src.as_ptr());\A    let v_gain = _mm256_loadu_ps([1.4142, 2.7182, 3.1415, 0.7071, 1.0, 1.0, 1.0, 1.0].as_ptr());\A    let v_res = _mm256_fmadd_ps(v_src, v_gain, v_src);\A    _mm256_storeu_ps(dest.as_mut_ptr(), v_res);\A\A    reg_base.add(0x4001_0800 >> 3).write_volatile(dest.as_ptr() as usize);\A    core::arch::asm!(\"nop\", \"sfence\", options(nostack, preserves_flags));\A\A    Ok(())\A }");
+}
+#root {
+	width: 100vw;
+	height: 100vh;
+}
+* {
+	padding: 0;
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	color: #ededed;
+}
+
+.svg {
+	filter: brightness(0) invert(0.7);
+}
+
+img {
+	user-select: none;
+	-webkit-user-drag: none;
+}
+
+.highlight {
+  color: #7dcfff; 
+  font-weight: 600;
+  background-color: rgba(125, 207, 255, 0.08);
+  border-radius: 3px;
+}

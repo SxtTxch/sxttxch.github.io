@@ -1,0 +1,43 @@
+.techstack-container{
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    user-select: none;
+    z-index: 1;
+}
+
+.techstack {
+    height: 10rem;
+    padding: 1rem;
+    width: 35ch;
+    background: rgba(22, 32, 51, 0.7);
+    border-radius: 0.2rem;
+    border: 0.1px solid rgba(237, 237, 237, 0.5);
+    gap: 1rem;
+}
+
+.techstack img {
+    height: 48px;
+    width: 48px;
+    padding: 0.5rem;
+    transition: transform 0.2s ease, margin 0.2s ease;
+    margin: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.2rem;
+
+}
+
+.techstack img:hover {
+    transform: scale(1.25) translateY(-0.3rem);
+}
+
+.techstack-label{
+    color: #ededed;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    opacity: 80%;
+}
+
