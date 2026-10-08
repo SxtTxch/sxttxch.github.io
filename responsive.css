@@ -1,0 +1,172 @@
+html {
+	overflow-x: hidden;
+}
+
+#root {
+	width: 100%;
+}
+
+#FileExplorer {
+	max-height: calc(100vh - 1rem);
+	max-height: calc(100dvh - 1rem);
+}
+
+@media (min-width: 1600px) {
+	html { font-size: 105.5%; }
+}
+
+@media (min-width: 2400px) {
+	html { font-size: 115.5%; }
+}
+
+@media (max-width: 900px) {
+
+	header {
+		height: auto;
+		min-height: 2.75rem;
+		box-sizing: border-box;
+	}
+
+	#content {
+		box-sizing: border-box;
+		padding: 0 1rem;
+	}
+
+	#landing-view,
+	#left-side,
+	#right-side {
+		width: 90%;
+	}
+
+	#breaker {
+		width: auto;
+		margin: 1rem 0;
+	}
+
+	#wrapper {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.25rem;
+	}
+
+	.techstack-container {
+		width: 90%;
+	}
+
+	.techstack {
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 35ch;
+		height: auto;
+        min-height: 5rem;
+		flex: 1;
+    }
+
+@media (max-width: 720px) {
+
+	#wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.25rem;
+	}
+
+	#webdevstack {
+		width: 100%;
+		max-width: 60ch;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	#webdevstack > img:nth-child(6n + 4),
+	#webdevstack > img:nth-child(6n + 5),
+	#webdevstack > img:nth-child(6n + 6) {
+		transform: translateX(6ch);
+	}
+
+
+	#DesktopIcons {
+		flex-direction: row;
+		justify-content: flex-start;
+		padding: 0.5rem 0;
+	}
+
+	#FileExplorer {
+		min-width: 0;
+		max-width: none;
+		width: calc(100% - 1rem);
+	}
+
+	#FileExplorerHeader {
+		font-size: 0.8rem;
+		gap: 0.5rem;
+		overflow-wrap: anywhere;
+	}
+
+	#FileExplorerIconWrapper {
+		flex-shrink: 0;
+	}
+
+	#FileExplorerContent {
+		padding: 1rem;
+	}
+
+	.FileExplorerEntry {
+		padding: 0 0.5rem;
+	}
+
+	#FileExplorerEntryFileType {
+		margin: 0 0.5rem;
+		font-size: 0.8rem;
+	}
+
+	footer p {
+		font-size: 0.75rem;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.greeting {
+		font-size: 2rem;
+	}
+
+	#webdevstack {
+		gap: 0.75rem;
+	}
+
+	#webdevstack > img {
+		width: 48px;
+		height: 48px;
+	}
+
+	#webdevstack > img:nth-child(6n + 4),
+	#webdevstack > img:nth-child(6n + 5),
+	#webdevstack > img:nth-child(6n + 6) {
+		transform: translateX(2rem);
+	}
+
+	#left-header {
+		padding-left: 0.75rem;
+	}
+
+	#right-header {
+		padding-right: 0.75rem;
+		gap: 0.75rem;
+	}
+}
+
+@media (pointer: coarse) {
+	.FileExplorerIcon > img {
+		width: 26px;
+		height: 26px;
+		padding: 0.35rem;
+	}
+}
+
+@media (hover: none) {
+	#learn_more {
+		color: rgb(237, 237, 237, 0.8);
+		background: rgba(22, 32, 51, 0.7);
+		border: 0.1px solid rgba(237, 237, 237, 0.5);
+	}
+}

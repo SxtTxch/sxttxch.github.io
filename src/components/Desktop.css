@@ -18,8 +18,12 @@
 	gap: 0.5rem;
 }
 #DesktopIcons > * {
-	box-sizing: border-box;
-	width: 100px;
+	width: auto;
+    min-width: 100px;
+}
+.iconLabel {
+    max-width: 100px;
+    white-space: nowrap;
 }
 #FileExplorer {
 	position: absolute;

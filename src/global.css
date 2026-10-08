@@ -38,6 +38,7 @@ body::after {
   color: rgba(0, 229, 255, 0.15);
   pointer-events: none;
   z-index: 0;
+  text-wrap: wrap;
 
   content: var(--after-content, "#![no_std]\A #![feature(allocator_api, stdsimd)]\A\A use core::sync::atomic::{AtomicUsize, Ordering::SeqCst};\A use core::arch::x86_64::{_mm256_fmadd_ps, _mm256_loadu_ps, _mm256_storeu_ps};\A\A #[repr(C, align(64))]\A pub struct DmaBufferRing<const N: usize> {\A    head: AtomicUsize,\A    tail: AtomicUsize,\A    descriptors: [*mut u8; N],\A }\A\A #[inline(always)]\A pub unsafe fn execute_kernel_pipeline(\A    reg_base: *mut usize,\A    src: &[f32; 8],\A    dest: &mut [f32; 8]\A ) -> Result<(), &'static str> {\A    let status_reg = reg_base.add(0x4002_1000 >> 3);\A    if status_reg.read_volatile() & 0x8000_0000 == 0 {\A        return Err(\"ERR_SYS_BUS_BUSY\");\A    }\A\A    let v_src = _mm256_loadu_ps(src.as_ptr());\A    let v_gain = _mm256_loadu_ps([1.4142, 2.7182, 3.1415, 0.7071, 1.0, 1.0, 1.0, 1.0].as_ptr());\A    let v_res = _mm256_fmadd_ps(v_src, v_gain, v_src);\A    _mm256_storeu_ps(dest.as_mut_ptr(), v_res);\A\A    reg_base.add(0x4001_0800 >> 3).write_volatile(dest.as_ptr() as usize);\A    core::arch::asm!(\"nop\", \"sfence\", options(nostack, preserves_flags));\A\A    Ok(())\A }");
 }
@@ -68,10 +69,4 @@ img {
   font-weight: 600;
   background-color: rgba(125, 207, 255, 0.08);
   border-radius: 3px;
-}
-
-.footer-absolute {
-    position: absolute;
-    bottom: 0;
-    left: 0.5rem;
 }

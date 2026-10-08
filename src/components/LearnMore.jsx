@@ -19,7 +19,6 @@ export function onClick() {
             body.classList.add("desktop_transition", "desktop_background");
             desktop.classList.remove("DesktopHidden");
             desktop.classList.add("DesktopVisible");
-            footer.classList.add("footer-absolute")
             animate(desktop, {
                 opacity: [
                     { from: 0, to: 1, duration: 600, ease: 'out(3)' }

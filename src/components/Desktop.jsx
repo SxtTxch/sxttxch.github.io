@@ -60,7 +60,7 @@ useEffect(() => {
 
 	function applyDesktopInteractionStylesForFileExplorer(event, name) {
 	    let selectedIcon = event.currentTarget;
-	    let FileExplorer = document.getElementById("FileExplorer");
+	    let FileExplorer = document.getElementById("FileExplorerBody");
 	    for (let i=0; i < FileExplorer.children.length; i++) {
 		let currentIcon = FileExplorer.children[i];
 		if (currentIcon.classList.contains('selected_explorer') && currentIcon != selectedIcon) { currentIcon.classList.remove('selected_explorer'); continue } 
@@ -68,9 +68,12 @@ useEffect(() => {
 	    selectedIcon.classList.add('selected_explorer');
 	}
 
-	function onFileInteracted(event, IconPath) {
-		console.log(IconPath);
-    		setPath(IconPath);
+	function onFileInteracted(event, IconPath, content, type) {
+        if (type === "link") {
+              window.open(content, '_blank');
+            return
+        }
+    	setPath(IconPath);
 }
 
     function getCurrentPathContent(path) {
@@ -106,7 +109,7 @@ useEffect(() => {
         <div id="Desktop" className="DesktopHidden">
             <div id="DesktopIcons">
                 {fileSystem.map((item) => (
-			<Icon type={item.type} name={item.name} key={item.name} path={`/${item.name}`} onFileInteracted={onFileInteracted} applyDesktopInteractionStyles={applyDesktopInteractionStyles} />
+			<Icon type={item.type} name={item.name} key={item.name} path={`/${item.name}`} content={content} onFileInteracted={onFileInteracted} applyDesktopInteractionStyles={applyDesktopInteractionStyles} />
                     )
                 )}
             </div>

@@ -10,6 +10,9 @@
 }
 
 .techstack {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     height: 10rem;
     padding: 1rem;
     width: 35ch; 
