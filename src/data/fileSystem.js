@@ -13,16 +13,6 @@ export const fileSystem = [
             "content": "https://github.com/SxtTxch/kccw"
         },
         {
-            "name": "kickstart.nvim",
-            "type": "link",
-            "content": "https://github.com/SxtTxch/kickstart.nvim"
-        },
-        {
-            "name": "rblx-to-rojo",
-            "type": "link",
-            "content": "https://github.com/SxtTxch/rblx-to-rojo"
-        },
-        {
             "name": "sxttxch.github.io",
             "type": "link",
             "content": "https://github.com/SxtTxch/sxttxch.github.io"
