@@ -92,7 +92,9 @@ html {
 
 	#FileExplorer {
 		min-width: 0;
-		max-width: none;
+		max-width: 80%;
+        min-height: 0;
+        max-height: 80%;
 		width: calc(100% - 1rem);
 	}
 
@@ -101,6 +103,9 @@ html {
 		gap: 0.5rem;
 		overflow-wrap: anywhere;
 	}
+    .iconLabel {
+        white-space: wrap;
+    }
 
 	#FileExplorerIconWrapper {
 		flex-shrink: 0;
