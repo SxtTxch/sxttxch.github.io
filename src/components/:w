@@ -12,7 +12,7 @@
 .techstack {
     height: 10rem;
     padding: 1rem;
-    width: 35ch; 
+    width: 35ch;
     background: rgba(22, 32, 51, 0.7);
     border-radius: 0.2rem;
     border: 0.1px solid rgba(237, 237, 237, 0.5);

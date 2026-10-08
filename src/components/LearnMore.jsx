@@ -3,6 +3,7 @@ import { animate } from 'animejs';
 
 export function onClick() {
     const landing_view = document.getElementById("landing-view");
+    const footer = document.querySelector("footer");
     const desktop = document.getElementById("Desktop");
     const body = document.body; 
 
@@ -18,6 +19,7 @@ export function onClick() {
             body.classList.add("desktop_transition", "desktop_background");
             desktop.classList.remove("DesktopHidden");
             desktop.classList.add("DesktopVisible");
+            footer.classList.add("footer-absolute")
             animate(desktop, {
                 opacity: [
                     { from: 0, to: 1, duration: 600, ease: 'out(3)' }

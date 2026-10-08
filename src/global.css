@@ -69,3 +69,9 @@ img {
   background-color: rgba(125, 207, 255, 0.08);
   border-radius: 3px;
 }
+
+.footer-absolute {
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+}
