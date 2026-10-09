@@ -27,6 +27,7 @@ html {
 		box-sizing: border-box;
 	}
 
+
 	#content {
 		box-sizing: border-box;
 		padding: 0 1rem;
@@ -70,6 +71,20 @@ html {
 		justify-content: center;
 		gap: 1.25rem;
 	}
+    .techstack {
+        width: 75%;
+        max-width: 75%;
+    }
+
+    .techstack-image-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin: auto;
+        width: 90%;
+    }
 
 	#webdevstack {
 		width: 100%;
