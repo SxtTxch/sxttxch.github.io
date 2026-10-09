@@ -8,6 +8,7 @@
 	grid-template-columns: auto auto auto;
 	width: calc(60ch);
 	gap: 1rem;
+    padding-bottom: 1rem;
 }
 #webdevstack > img:nth-child(6n + 4),
 #webdevstack > img:nth-child(6n + 5),
