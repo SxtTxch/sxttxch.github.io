@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap');
-.greeting {
+.mobile .greeting {
     font-family: 'Syne', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
@@ -12,4 +12,15 @@
     -webkit-background-clip: initial;
     background-clip: initial;
     -webkit-text-fill-color: #ffffff;
+}
+.desktop .greeting {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
